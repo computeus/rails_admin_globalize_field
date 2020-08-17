@@ -22,8 +22,6 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails', '>= 5.0'
   spec.add_dependency 'rails_admin', '>= 2.0'
 
-  spec.add_dependency 'globalize', '>= 5.0'
-
   spec.add_development_dependency 'capybara', '~> 3.29'
   spec.add_development_dependency 'pry'
   spec.add_development_dependency 'pry-byebug'
