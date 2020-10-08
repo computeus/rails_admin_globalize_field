@@ -27,7 +27,7 @@ module RailsAdminGlobalizeField
     def tabs
       tabs =
         available_locales.map do |locale|
-          translation = bindings[:object].translations.find_by(locale: locale)
+          translation = bindings[:object].translations.find_or_initialize_by(locale: locale)
           RailsAdminGlobalizeField::Tab.new(locale, translation, validate: submit_action?) if translation
         end.compact
 
