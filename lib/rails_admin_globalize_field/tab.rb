@@ -4,16 +4,17 @@ module RailsAdminGlobalizeField
   class Tab
     LABEL_KEY = 'admin.globalize_field.tab_label'
 
-    attr_reader :locale, :translation
+    attr_reader :locale, :translation, :dummy_id
 
     def initialize(locale, translation, validate: true)
       @locale = locale
       @translation = translation
       @validate = validate
+      @dummy_id = rand(1000000)
     end
 
     def id
-      ['pane', translation.model_name.param_key, locale].join('-')
+      ['pane', translation.model_name.param_key, dummy_id, locale].join('-')
     end
 
     def label
