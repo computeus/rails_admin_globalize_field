@@ -10,7 +10,7 @@ module RailsAdminGlobalizeField
       @locale = locale
       @translation = translation
       @validate = validate
-      @dummy_id = rand(1000000)
+      @dummy_id = translation.translated_model.present? ? translation.translated_model.id : rand(1000000)
     end
 
     def id
