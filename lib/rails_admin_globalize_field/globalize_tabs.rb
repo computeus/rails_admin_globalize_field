@@ -21,7 +21,7 @@ module RailsAdminGlobalizeField
     end
 
     def available_locales
-      I18n.available_locales
+      Settings['bindings[:object].site.name'].available_locales
     end
 
     def tabs
